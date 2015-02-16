@@ -6,7 +6,7 @@ public class QuickSelect {
         arr[j] = temp;
     }
 
-    public void quicksort(int[] arr, int start, int end, int k) {
+    public void quickselect(int[] arr, int start, int end, int k) {
         if (start >= end) {
             return;
         }
@@ -26,15 +26,15 @@ public class QuickSelect {
         }
 
         if (j - start + 1 >= k) {
-            quicksort(arr,start,j,k);
+            quickselect(arr,start,j,k);
         } else {
             // start, 1, 2, 3, 4, ..., j, i, ..., end
-            quicksort(arr,i,end, k - (i-start));
+            quickselect(arr,i,end, k - (i-start));
         }
     }
 
-    public int quicksort(int[] arr, int k) {
-        quicksort(arr, 0, arr.length-1, k);
+    public int quickselect(int[] arr, int k) {
+        quickselect(arr, 0, arr.length-1, k);
         return arr[k-1];
     }
 
@@ -52,22 +52,22 @@ public class QuickSelect {
         int[] arr = {24,2,45,20,56,75,2,56,99,53,12};
         q.print(arr);
         {
-            int value = q.quicksort(arr,3);
+            int value = q.quickselect(arr,3);
             q.print(arr);
             System.out.println(value);
         }
         {
-            int value = q.quicksort(arr,5);
+            int value = q.quickselect(arr,5);
             q.print(arr);
             System.out.println(value);
         }
         {
-            int value = q.quicksort(arr,10);
+            int value = q.quickselect(arr,10);
             q.print(arr);
             System.out.println(value);
         }
         {
-            int value = q.quicksort(arr,11);
+            int value = q.quickselect(arr,11);
             q.print(arr);
             System.out.println(value);
         }
