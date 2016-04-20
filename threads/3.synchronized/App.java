@@ -38,7 +38,8 @@ public class App {
         try {
             t1.join();
             t2.join();
-        } catch(Exception e) {}
+        } catch(Exception e) {
+        }
         System.out.println("Count is: " + count);
     }
 }
