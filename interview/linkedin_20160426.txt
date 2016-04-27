@@ -1,0 +1,178 @@
+Nick Snyder
+
+// Input: [1,0,0,0,0,0,1,0,0]
+//        [1,0,1,0,1,0,1,0,1]
+//
+//    3 => true
+//    4 => false
+//
+// Input: [1,0,0,1,0,0,1,0,0]
+//
+//    1 => true
+//    2 => false
+//
+// Input: [0]
+//
+//    1 => true
+//    2 => false
+ 
+public boolean canPlaceFlowers(List<Boolean> flowerbed, int numberToPlace) {
+    // Implementation here
+    
+    if (flowerbed == null) {
+        return false;
+    }
+    
+    if (numberToPlace == 0) {
+        return true;
+    }
+    
+    int count = 0;
+    for(int i = 0; i < flowerbed.size(); i++) {
+        if (flowerbed.get(i)) {
+            continue;
+        }
+        if (!((i > 0 && flowerbed.get(i-1)) || (i < flowerbed.size() - 1 && flowerbed.get(i+1)))) {
+            if (++count == numberToPlace) {
+                return true;
+            }
+            flowerbed.set(i, true);
+        }
+    }
+    
+    return false;
+    
+}
+
+
+
+public interface TwoSum {
+    /**
+     * Stores @param input in an internal data structure.
+     */
+    void store(int input);
+ 
+    /**
+     * Returns true if there is any pair of numbers in the internal data structure which
+     * have sum @param val, and false otherwise.
+     * For example, if the numbers 1, -2, 3, and 6 had been stored,
+     * the method should return true for 4, -1, and 9, but false for 10, 5, and 0
+     */
+    boolean test(int val);
+}
+
+
+public class Solution implements TwoSum {
+
+    Set<Integer> set = new HashSet<>();
+    
+    public void store(int input) {
+        set.add(input);
+    }
+
+    public boolean test(int val) {
+        for(Integer member : set) {
+            if (val - member != member && set.contains(val - member)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+
+
+public class Solution implements TwoSum {
+
+    Set<Integer> set = new HashSet<>();
+    Set<Integer> sol = new HashSet<>();
+    
+    public void store(int input) {
+        for(Integer member : set) {
+            if (!set.contains(member)) {
+                sol.add(member + input);
+            }
+        }
+        set.add(input);
+    }
+    
+    public boolean test(int val) {
+        return sol.contains(val);
+    }
+}
+
+
+
+public class Solution implements TwoSum {
+
+    Set<Integer> set = new HashSet<>();
+    Set<Integer> twoSum = new HashSet<>();
+    Set<Integer> threeSum = new HashSet<>();
+        
+    public void store(int input) {
+        if (set.contains(input)) {
+            return;
+        }
+        for(Integer member : twoSum) {
+            threeSum.add(member + input);
+        }
+        for(Integer member : set) {
+            twoSum.add(member + input);
+        }
+        set.add(input);
+    }
+    
+    public boolean test(int val) {
+      
+        for(Integer member : threeSum) {
+            if (member != val - member && set.contains(val - member)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+}
+
+
+
+public class Solution implements TwoSum {
+
+    Set<Integer> set = new HashSet<>();
+    Set<Integer> twoSum = new HashSet<>();
+    // in test
+    Set<Integer> threeSum = new HashSet<>();
+
+    boolean isStoreCalled = false;
+        
+    public void store(int input) {
+        if (set.contains(input)) {
+            return;
+        }   
+        for(Integer member : set) {
+            twoSum.add(member + input);
+        }
+        set.add(input);
+        isStoreCalled = true;
+    }
+    
+    public boolean test(int val) {
+   
+        if (isStoreCalled) {
+            for(Integer member : twoSum) {
+                for(Integer input : set) {
+                    threeSum.add(member + input);                
+                }
+            }
+        }
+
+        for(Integer member : set) {
+            if (threeSum.contains(val - member)) {
+                return true;
+            }
+        }
+        isStoreCalled = false;
+        return false;
+    }
+
+}
