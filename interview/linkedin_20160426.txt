@@ -165,13 +165,13 @@ public class Solution implements TwoSum {
                 }
             }
         }
+        isStoreCalled = false;
 
         for(Integer member : set) {
             if (threeSum.contains(val - member)) {
                 return true;
             }
         }
-        isStoreCalled = false;
         return false;
     }
 
