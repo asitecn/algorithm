@@ -1,0 +1,23 @@
+1. Host Manager
+
+2. Design (Senior Principal)
+- Shorten URL (support metrics tracking)
+
+3. Lunch (Interview)
+
+4. Coding
+4.1. Design a data structure that supports the following operations in constant time
+- boolean add(int data)
+- boolean remove(int data)
+- int removeRandom()
+
+4.2. Int to Roman, Roman to Int (validate if Roman is a valid);
+
+5. Communication
+- Project deep dive
+
+6. Coding
+6.1 Paint House II, constant space
+6.2 Given a binary tree, traversal level by level from leaf nodes.
+
+
