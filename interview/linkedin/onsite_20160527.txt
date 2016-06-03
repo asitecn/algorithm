@@ -2,6 +2,7 @@
 
 2. Design (Senior Principal)
 - Shorten URL (support metrics tracking)
+- I did very well
 
 3. Lunch (Interview)
 
@@ -15,6 +16,7 @@
 
 5. Communication
 - Project deep dive
+- I did very well
 
 6. Coding
 6.1 Paint House II, constant space
