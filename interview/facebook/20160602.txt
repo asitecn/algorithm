@@ -1,0 +1,22 @@
+0. Recruiter (15m)
+
+1. White Manager (45m)
+- Project deep (not very deep) dive
+- Questions on leaderships
+
+2. White (coding)
+- 4 sums (an array with distinct numbers)
+- wrote n^3 quickly, then work on n^2 solution
+
+3. Indian (Pirate)
+- Design a system to find 10 restraurant nearest to the user (given 50M restraurants)
+
+4. Lunch (White)
+
+5. Chinese (Coding)
+- 2 dimension array with characters, moves are from left->right, print all paths from left to right.
+- provide an array of integers and array k, calculate top appeared integers.
+
+6. White (design)
+- Short URLs (100M writes per day)
+
