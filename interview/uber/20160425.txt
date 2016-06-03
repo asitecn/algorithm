@@ -1,0 +1,127 @@
+Monday 4/25 at 1pm PST
+
+Codepair: http://hr.gs/9b339b
+
+We will call you at  408-203-3068
+
+
+JSON:
+{ shift_id: 1,
+  driver_id: 123,
+  shift_start: 2015-01-01 12:00:00,
+  shift_end: 2015-01-01 15:00:00,
+  events: [
+   { event_name: trip0_start,
+     event_time: 12:15:00 },
+   { event_name: trip0_end,
+     event_time: 12:35:00 },
+   { event_name: trip1_start,
+     event_time: 12:45:00 },
+   { event_name: trip1_end,
+     event_time: 12:55:00 }
+   ]
+}
+
+Compute the following using any programming language of your choice?
+
+1. driver_id
+2. time_duration_of_shift
+3. Number_of_trips
+
+class Triplet {
+    long driver_id;
+    long time_duration_of_shift;
+    int number_of_trips;
+    public Triplet(long driver_id) {
+        this.driver_id = driver_id;
+        this.time_duration_of_shift = 0;
+        this.number_of_trips = 0;
+    }
+    public Triplet(long driver_id, long time_duration_of_shift, int number_of_trips) {
+        this.driver_id = driver_id;
+        this.time_duration_of_shift = time_duration_of_shift;
+        this.number_of_trips = number_of_trips;
+    }
+    
+    public void addTimeDuration(Date ds, Date de) {
+        this.time_duration_of_shift += 
+    }
+    
+    public void incrementTrips() {
+        this.number_of_trips++;
+    }
+}
+
+public Triplet calculateShifts(List<JsonObject> jsonlist) {
+    
+    Map<Long, Triplet> map = new HashMap<>();
+    
+    for(JsonObject json : jsonlist) {
+        if (!map.containsKey(json.driver_id)) {
+            map.put(json.driver_id, new Triplet(map.driver_id));
+        }
+        Triplet triple = map.get(json.driver_id);
+        triplet.addTimeDuration(json.shift_end - json.shift_start);
+        for(Event event : json.events) {
+            if (event.event_name.indexOf("_start") != -1) {
+                triplet.incrementTrips();
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+Table : Trip_Vales
+
+Id | Trip_Value_1 | Trip_Value_2| Trip_Value_3| Trip_Value_4 | Trip_value_5
+1  | $1            | -$1.04       | 0            | $ -234       | $2
+2  | $55447        | $1           | -$756        | $1           | $0
+3  | $4534534      | $1           | $1           | $54          | $56
+
+Can you pick the rows, that have two $1, in any of the trip Value Columns?
+
+Answer 1:
+
+SQL?
+
+select SUM(IF(Trip_Value_1 == 1, 1, 0) + IF(Trip_Value_2 == 1, 1, 0) + IF(Trip_Value_1 == 1, 1, 0) + IF(Trip_Value_1 == 1, 1, 0) + IF(Trip_Value_1 == 1, 1, 0)
+
+
+
+Question 3 
+
+Input Table:
+Uber_Eats_Sales
+
+Id |driver Id| prod
+1 |123|A
+2 |123|A
+3 |123|B
+4 |456|B
+5 |789|C
+6 |789|B
+7 |789|B
+
+Output Needed?
+
+Driver_ID|Prod_A| Prod_B| Prod_C
+  
+456         |0         |1          |0
+789         |0         |2          |1
+
+
+select 
+    driver_id, 
+    SUM(prod == 'A' ? 1 : 0) as Prod_A, 
+    SUM(prod == 'B' ? 1 : 0) as Prod_B, 
+    SUM(prod == 'C' ? 1 : 0) as Prod_C
+from 
+    Uber_Eats_Sales
+group by 
+    driver_id;
+    
+
