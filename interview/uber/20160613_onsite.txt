@@ -1,0 +1,43 @@
+1. 11:45 -> 12:30
+* Design ticket master
+- I mentioned there should be a few components - provider, user, event, ticket
+- Then draw the general diagram, some estimation on qbs and data size.
+- They would like to derive to use NoSQL.
+
+2. 12:30 -> 01:00
+* lunch with the previous interviewer, that's not standard process.
+
+3. 01:00 -> 01:55
+* Start to discuss my previous project, the ETL framework project.
+   * In the middle of interview, after 15 minutes, fire alarms, everyone exit the building.
+   * After 20 minutes, come back to the building
+* Continue to discuss the project.
+* Design data model for uber eats data model
+   * driver, rider, product, restraurant, time, x/y
+* Given a list of sessions with timestamp, write a sql to output prev, curr, and next records.
+   * For instance, 
+      * user_id_1, page1, timestamp1
+      * user_id_1, page2, timestamp2
+      * user_id_1, page3, timestamp3
+   * Output
+      * user_id_1, null, page1, page2
+      * user_id_1, page1, page2, page3
+      * user_id_1, page2, page3, null
+* I mentioned a rank function and briefed the idea, in the end, I discussed the solution in pig python udf.
+
+4. 01:55 -> 02:30
+* Discussion with manager, experience.
+* Give me two reasons why I should hire you? 
+   * I am passionate with uber, think it is leader of O2O, and can expand in many areas. When I am passinated, I will be self-inspired and outperform.
+   * I have the skill set that can help uber to build the data products.
+* What should you improve? Impact more on the roadmap.
+* A lot of casual discussions
+
+5. 02:30 -> 03:15
+* Experience, discussed budgeting project.
+
+6. 03:15 -> 04:00
+* Experience, discuss what is Gemini, discuss ETL framework
+* Find out the minimum number of coins, as well as the coins for a given change.
+
+
