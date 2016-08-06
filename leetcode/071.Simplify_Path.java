@@ -1,3 +1,4 @@
+// Solution 1
 public class Solution {
     
     // path = "/home/", => "/home"
@@ -28,5 +29,44 @@ public class Solution {
             sb.insert(0, "/");
         }
         return sb.toString();
+    }
+}
+
+// Solution 2
+public class Solution {
+    
+    // path = "/home/", => "/home"
+    // path = "/a/./b/../../c/", => "/c"
+
+    public String simplifyPath(String path) {
+        
+        Stack<String> stack = new Stack<String>();
+        int i = 0;
+        while (i < path.length()) {
+            while (i < path.length() && path.charAt(i) == '/') {
+                i++;
+            }
+            int start = i;
+            while (i < path.length() && path.charAt(i) != '/') {
+                i++;
+            }
+            int end = i;
+            String symbol = path.substring(start, end);
+            if (symbol.length() == 0 || symbol.equals(".")) {
+                continue;
+            } else if (symbol.equals("..")) {
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                }
+            } else {
+                stack.push(symbol);
+            }
+        }
+        
+        String s = "";
+        while(!stack.isEmpty()) {
+            s = "/" + stack.pop() + s;
+        }
+        return (s.length() == 0 ? "/" : s);
     }
 }
