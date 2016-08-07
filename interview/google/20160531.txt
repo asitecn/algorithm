@@ -1,0 +1,26 @@
+1. Indian Guy (Vikas Kumar)
+- lc135 Candy 
+- lc41 First Missing Positive
+
+2. White (Jason)
+- System design
+* Implement shorten URL (with distributed hash table)
+* Discussed internals of big table, distributed hash table
+* Discussed recovery mechanism
+
+3. Indian woman (Shruthi)
+Q1: 
+- Abbreviation (given aaa => a3), I clarified cases such as a3 itself, with solution of escape with '#'
+- What if the words are limited to 10 characters?
+Q2: 
+- write a function such that the chance of 1 for the nth character is 1/2^n.
+
+4. Lunch break (asian guy)
+
+5. Japanese (Masaaki)
+- lc124 Binary Tree Maximum Path Sum 
+- Discussed the strategy for phrase canon match. 
+
+6. White (Alex)
+- lc288 Unique Word Abbreviation (did very well)
+- lc320 Generalized Abbreviation (did ok)
